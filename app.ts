@@ -18,3 +18,14 @@ let userName: string
 if (typeof userInput === 'string') {
   userName = userInput
 }
+
+//? Never Types
+
+function generateError(message: string, code: number) {
+  // infinite loops are also never types
+  while (true) {
+    throw { message: message, errorCode: code }
+  }
+}
+
+generateError('An error occured!', 500)
