@@ -11,4 +11,10 @@ userInput = 'Ridwan'
 let userName: string
 
 // This will cause an error
-userName = userInput
+// userName = userInput
+
+//  can add if statement to work around this
+
+if (typeof userInput === 'string') {
+  userName = userInput
+}
