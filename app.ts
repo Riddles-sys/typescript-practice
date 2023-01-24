@@ -1,28 +1,14 @@
-function add(n1: number, n2: number) {
-  return n1 + n2
-}
+let userInput: unknown
 
-function printResult(num: number): void {
-  console.log('Result: ' + num)
-}
+//* Can store any value without getting errors.
 
-function addAndHandle(n1: number, n2: number, cb: (num: number) => void) {
-  const result = n1 + n2
-  cb(result)
-}
+userInput = 5
 
-printResult(add(5, 12))
+userInput = 'Ridwan'
 
-let combineValues: (a: number, b: number) => number
+// * Will get errors if assigning to a type that has already been defined
 
-combineValues = add
-// combineValues = printResult;
-// combineValues = 5;
+let userName: string
 
-console.log(combineValues(8, 8))
-
-// let someValue: undefined;
-
-addAndHandle(10, 20, (result) => {
-  console.log(result)
-})
+// This will cause an error
+userName = userInput
